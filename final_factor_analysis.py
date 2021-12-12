@@ -20,7 +20,7 @@ ev, v = machine.get_eigenvalues()
 #print(ev)
 
 pyplot.scatter(range(1,dataset.shape[1]+1),ev)
-pyplot.savefig("plot.png")
+pyplot.savefig("plot_factor_analysis.png")
 pyplot.close()
 
 machine = FactorAnalyzer(n_factors=3, rotation = 'Varimax')

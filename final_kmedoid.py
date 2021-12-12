@@ -15,7 +15,7 @@ data = data.values
 # print(data)
 
 pyplot.scatter(data[:,0], data[:,1])
-pyplot.savefig("scatterplot.png")
+pyplot.savefig("scatterplot_kmedoids.png")
 
 def run_kmedoids(n, data):
 	machine = KMeans(n_clusters=n)

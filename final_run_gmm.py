@@ -13,23 +13,13 @@ print(data)
 data = data.values
 
 pyplot.scatter(data[:,1], data[:,2])
-pyplot.savefig("scatter_new.png")
+pyplot.savefig("scatter_gmm.png")
 pyplot.close()
 
 #data = data[:,1:3]
 
 #print(data)
 
-def run_kmeans(n, data):
-	kmeans_machine = KMeans(n_clusters=n)
-	kmean_results = kmeans_machine.fit_predict(data)
-	silhouette = 0
-	if n > 1:
-		silhouette = silhouette_score(data, kmeans_machine.labels_, metric = 'euclidean')
-	pyplot.scatter(data[:,0], data[:,1], c=kmean_results)
-	pyplot.savefig("scatter_kmeans_" + str(n) + ".png")
-	pyplot.close()
-	return silhouette
 
 def run_gmm(n, data):
 	gmm_machine = GaussianMixture(n_components=n)
@@ -42,16 +32,6 @@ def run_gmm(n, data):
 	pyplot.close()
 	return silhouette
 
-
-# kmeans_silhouette = run_kmeans(3, data)
-# gmm_silhouette = run_gmm(3, data)
-
-# print(kmeans_silhouette)
-# print(gmm_silhouette)
-
-
-kmeans_silhouette_list = [ run_kmeans(i+1, data) for i in range(7)]
-print(kmeans_silhouette_list)
 
 gmm_silhouette_list = [ run_gmm(i+1, data) for i in range(7)]
 print(gmm_silhouette_list)

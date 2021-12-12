@@ -14,7 +14,7 @@ data = data.values
 # print(data)
 
 pyplot.scatter(data[:,0], data[:,1])
-pyplot.savefig("scatterplot.png")
+pyplot.savefig("scatterplot_kmeans.png")
 
 
 def run_kmeans(n, data):
@@ -57,7 +57,7 @@ pyplot.close()
 ssd_result_diff = [ ssd_result[i-1] - x for i,x  in enumerate(ssd_result)][1:]
 
 pyplot.plot(range(2,8), silhouette_result)
-pyplot.savefig("silhouette.png")
+pyplot.savefig("silhouette_kmeans.png")
 pyplot.close()
 
 
