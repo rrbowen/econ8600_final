@@ -20,7 +20,7 @@ ev, v = machine.get_eigenvalues()
 #print(ev)
 
 pyplot.scatter(range(1,dataset.shape[1]+1),ev)
-pyplot.savefig("plot.png")
+pyplot.savefig("plot_country.png")
 pyplot.close()
 
 machine = FactorAnalyzer(n_factors=3, rotation = 'Varimax')
@@ -37,7 +37,7 @@ dataset = dataset.values
 
 result = numpy.dot(dataset, loadings)
 
-print(result)
+print(result_country)
 print(result.shape)
 
 #"result" is the dataset we will use for clustering.  It does not include country for now
