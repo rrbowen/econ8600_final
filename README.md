@@ -36,5 +36,10 @@ Optimal Number of Clusters
 For all models, silhouette scores strongly suggest two groups.  A closer examination of GMM makes it seem there could be three groups.  In the GMM model, the two group division is different than the other clustering algorithms.  It shows the points “to the right and above” are in one group and the points “to the left and bottom” are a different group.  This implies that the bunch on the bottom left is really a different group.
 All the numerical evaluation suggests two groups.  I prefer the three groups as determined by GMM.
 
-Country
-I am unable to incorporate country into my analysis.  The problem is that country is a string and the other data are values.  Converting the string to a number would not help, since it would imply some ordinal meaning to the data.  (as of Sunday 12:10 pm).  
+
+final_run_kmc_usonly.py - Country
+I first approached the country problem by sorting by country.  The US was by far the biggest, followed by Australia, Great Britain, and Canada.  I created a subset containing only the US records, about half of the total.  If the result of the k-means clustering analysis on US only is materially different from the clustering results of all other countries records, then country warrants further investigation.  
+The silhouette score was lower than the previous analysis (.61 vs .80).  The scatterplot looks completely different.  It appears that the smaller blob belonged to non-US records, and it is gone almost completely.  The remaining graph looks like the elongated “cigar” shape from the original scatterplot.
+  I conclude that we need to do further analysis on each country, and use those results by country if we implement the recommendations in real life.  The US looks quite different than all other countries combined.
+
+
